@@ -130,11 +130,49 @@
     padding-right:90px;
     margin-left: 60%;
 }
+.table-sub{
+    position: absolute;  
+    top:30%;
+    display:none;
+    background-color: white;
+    margin-top:0px;
+  }
+  .table-sub th{
+      font-size: 17px;
+      padding:16px 0px;
+      padding-right:50px;
+      padding-left: 10px;
+      font-weight: lighter;
+  }
+  .displaytable:hover .table-sub{
+      display:block;
+  }
+  .table-sub table{
+      border-collapse: collapse;
+  }
+  .table-sub table thead,.table-sub table tbody{
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+  .table-sub table td{
+      padding:10px;
+  }
+  .table-sub table a{
+      text-decoration: none;
+      color:rgb(73, 73, 73);
+      font-weight: lighter;
+  }
+  .table-sub table a:hover{
+      text-decoration: underline;
+  }
 
 
 
 
 
+
+
+
+/* ====================================================== */
 
 #set1{
     width:92vw;
@@ -197,6 +235,148 @@
     color: white;
     border:none;
 }
+#Pcontainer>div>button:hover{
+    background-color: rgb(252, 189, 106);
+    cursor: pointer;
+}
 #Pcontainer>div>h3{
     height:30px;
 }
+
+#home:hover{
+    cursor: pointer;
+}
+
+
+
+
+
+
+/* footer================================================================ */
+
+#footer{
+    width:98vw;
+    height:auto;
+    border:none;
+    margin:auto;
+    background-color:rgba(248, 234, 217, 0.521);
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+#upperfooter{
+    width:100%;
+    height:auto;
+    margin:auto;
+    border:none;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows:repeat(2,1fr);
+    gap:20px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    padding-top:30px;
+    
+}
+#upperfooter>div:nth-child(1){
+    border:none;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+#upperfooter>div:nth-child(1)>p{
+    color:rgb(92 92 95);
+    margin-left: 15px;
+}
+#upperfooter>div:nth-child(1)>h3{
+    color:rgb(38 38 44);
+    font-size: 22px;
+    font-weight: lighter;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+#upperfooter>div:nth-child(2){
+    border:none;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+#upperfooter>div:nth-child(2)>p{
+    color:rgb(92 92 95);
+    margin-left: 15px;
+    font-size: 13px;
+}
+#upperfooter>form{
+    border:none;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+#upperfooter>form>input{
+    height:40%;
+}
+#upperfooter>form>input:nth-child(2){
+    width:78%;
+}
+#upperfooter>form>input:nth-child(3){
+    width:20%;
+    color:white;
+    background-color:rgb(75 86 102);
+    border:1px solid black;
+}
+#upperfooter>form>input:nth-child(3):hover{
+    color:black;
+    background-color:white;
+}
+
+
+#lowerfooter table{
+    margin:auto;
+    text-align: left;
+    margin-top:30px;
+}
+#lowerfooter th{
+    padding-bottom: 20px;
+    font-weight: 400;
+}
+#lowerfooter td{
+    padding-right:30px;
+    padding-bottom:10px; 
+}
+#lowerfooter td a{
+    text-decoration: none;
+    color:rgb(80, 80, 80);
+    font-size: 14px;
+    font-weight: 10;
+}
+#lowerfooter td a:hover{
+    text-decoration: underline;
+}
+
+#symbol{
+    width:30vw;
+    height:30px;
+    border:none;
+    margin:auto;
+    display:flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+#symbol>div{
+    width:18%;
+    border:none;
+}
+#symbol>div:hover{
+    cursor: pointer;
+}
+
+#longimg{
+    width:90%;
+    margin:auto;
+    padding-bottom: 60px;
+} 
+
+
+/* footer end===================================================*/
