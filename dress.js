@@ -2,13 +2,16 @@ document.querySelector("#home").addEventListener("click",function(){
     window.location.href="index.html";
 })
 
+let kart=document.querySelector("#kart").addEventListener("click",function(){
+    window.location.href="cart.html";
+})
+
 
 
 
 let url="https://636cb9c091576e19e3132cf2.mockapi.io/cloth";
 let Data=[];
 let cartData=JSON.parse(localStorage.getItem("cart"))||[];
-console.log(cartData);
 async function getData(){
     try {
         let res= await fetch(url);
@@ -24,6 +27,7 @@ getData();
 function displayBox(data){
     document.querySelector("#Pcontainer").innerHTML=null;
     data.forEach((element,index) => {
+        
         let box=document.createElement("div");
         
         let image=document.createElement("img");
@@ -35,8 +39,23 @@ function displayBox(data){
         let addtocart=document.createElement("button");
         addtocart.innerText="Add To Cart";
         addtocart.addEventListener("click",function(){
-            cartData.push(element);
-            localStorage.setItem("cart",JSON.stringify(cartData));
+            
+                let count=0;
+                for( let i=0;i<cartData.length;i++){
+                    if(cartData[i].title==element.title){
+                        count++;
+                        break;
+                    }
+                }
+                if(count!=0){
+                    alert("Product Already in Cart")
+                }else{
+                    cartData.push(element);
+                    localStorage.setItem("cart",JSON.stringify(cartData));
+                    alert("Product Added To Cart");
+                }
+            
+            
         })
         box.append(image,title,price,addtocart);
         document.querySelector("#Pcontainer").append(box);
