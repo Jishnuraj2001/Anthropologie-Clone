@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in Page</title>
+    <style>
+      .nav{
+        width:98vw;
+        margin:auto;
+        height:auto;
+        border:none;
+        display:flex;
+        justify-content: space-evenly;
+      }
+      .nav>a{
+        font-size: 30px;
+        text-decoration: none;
+        padding:10px 20px;
+        background-color:rgb(67, 64, 64);
+        color:rgb(250, 233, 167);
+        border:5px solid white;
+        
+      }
+      .nav>a:hover{
+        background-color: rgb(98, 98, 98);
+      }
+      .nav>a:nth-child(2){
+        border: 5px solid rgb(250, 233, 167);
+      }
+      #sign{
+        width:40vw;
+        height:auto;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        margin:auto;
+        text-align: center;
+        margin-top: 60px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+      #sign>form{
+        width:100%;
+        height:auto;
+        text-align: center;
+      }
+      #sign>form>input{
+        width:80%;
+        margin:20px 0px; 
+        padding:6px 0px;
+        font-size: 18px;
+      }
+      #submit{
+        border:none;
+        background-color: rgb(67, 64, 64);
+        color:rgb(250, 233, 167);
+        border:5px solid rgb(250, 233, 167)
+      }
+      #submit:hover{
+        background-color: rgb(98, 98, 98);
+      }
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="./signup.html">Signup</a>
+        <a href="./signin.html">Signin</a>
+      </div>
+      <div id="sign">
+        <h1>Please Enter Your Details</h1>
+        <form>
+          <input type="email" id="email" placeholder="Enter Email Id">
+          <input type="password"  id="password" placeholder="Enter Password">
+          <input id="submit" type="submit" value="Submit" />
+        </form>
+      </div>
+</body>
+<script>
+  let arrData=JSON.parse(localStorage.getItem("account-data"));
+  let form=document.querySelector("form");
+  form.addEventListener("submit",function(event){
+     event.preventDefault();
+    arrData.forEach((element) => {
+      if(element.email===form.email.value){
+        if(element.email===form.email.value&&element.password===form.password.value){
+        alert("Sign in Successful");
+        ReDirect();
+        }else{
+          alert("Wrong Credentials");
+        }
+       }
+    });
+       
+  })
+
+  function ReDirect(){
+    window.location.href="../index.html";
+  }
+  
+
+
+</script>
+</html>
