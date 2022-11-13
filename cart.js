@@ -77,3 +77,15 @@ function cutArray(index){
     localStorage.setItem(JSON.stringify(cartData));
     displayBox(cartData);
 }
+
+
+
+let user=JSON.parse(localStorage.getItem("account-data"))||[];
+
+document.querySelector("#checkout").addEventListener("click",function(){
+    if(user.length==[]){
+        alert("please SignUp, or Login if you have an account already");
+    }else{
+        window.location.href="checkout/checkout.html";
+    }
+})
